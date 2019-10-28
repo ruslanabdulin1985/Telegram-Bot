@@ -11,6 +11,14 @@ def send_welcome(message):
     Bot.reply_to(message, "Howdy, how are you doing?")
 
 
+@Bot.message_handler(commands=['inline'])
+def send_welcome(message):
+    inlineBtns = telebot.types.InlineKeyboardMarkup()
+
+    inlineBtns.add(telebot.types.InlineKeyboardButton(text="Windows", url='http://microsoft.com'))
+    inlineBtns.add(telebot.types.InlineKeyboardButton(text="Linux", url='https://www.linuxfoundation.org/'))
+    Bot.send_message(message.from_user.id, "Choose your destiny: ", reply_markup=inlineBtns )
+
 @Bot.message_handler(commands=['kb'])
 def send_welcome(message):
 
@@ -26,9 +34,6 @@ def handle_command(message):
     print(message.text)
     #Echo(message)
     SmartReply(message)
-
-
-
 
 def ShowKeyboard():
     pass

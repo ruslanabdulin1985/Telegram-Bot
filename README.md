@@ -44,8 +44,6 @@ https://api.telegram.org/bot<token>/METHOD_NAME
 
 [PyCharm](https://www.jetbrains.com/pycharm/)
 
-### pip
-
 [pypi project](https://pypi.org/project/pip/)
 
 ### Install/Update pip
