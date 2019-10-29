@@ -10,21 +10,7 @@
 
 * @BotFather - One bot to rule them all
 
-
-- /mybots — returns a list of your bots with handy controls to edit their settings
-
-- /mygames — does the same for your games
-Edit bots
-
-+ /setname – change your bot's name.
-/setdescription — change the bot's description, a short text of up to 512 characters, describing your bot. Users will see this text at the beginning of the conversation with the bot, titled ‘What can this bot do?’.
-+ /setabouttext — change the bot's about info, an even shorter text of up to 120 characters. Users will see this text on the bot's profile page. When they share your bot with someone, this text is sent together with the link.
-+ /setuserpic — change the bot‘s profile pictures. It’s always nice to put a face to a name.
-+ /setcommands — change the list of commands supported by your bot. Users will see these commands as suggestions when they type / in the chat with your bot. Each command has a name (must start with a slash ‘/’, alphanumeric plus underscores, no more than 32 characters, case-insensitive), parameters, and a text description. Users will see the list of commands whenever they type ‘/’ in a conversation with your bot.
-+ /deletebot — delete your bot and free its username.
-
 ## HTTP requests
-
 
 *All queries to the Telegram Bot API must be served over HTTPS and need to be presented in this form: https://api.telegram.org/bot<token>/METHOD_NAME. Like this for example
     - get me : https://api.telegram.org/bot957417052:AAHLnkugOejglnzeY5141FahYxxYcuhOjyE/getMe
