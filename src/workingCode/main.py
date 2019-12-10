@@ -7,17 +7,18 @@ Bot = telebot.TeleBot("957417052:AAHLnkugOejglnzeY5141FahYxxYcuhOjyE")
 
 @Bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
-    RandomTyping(message)
+    random_typing(message)
     Bot.reply_to(message, "Howdy, how are you doing?")
 
 
 @Bot.message_handler(commands=['inline'])
 def send_welcome(message):
-    inlineBtns = telebot.types.InlineKeyboardMarkup()
+    inline_btns = telebot.types.InlineKeyboardMarkup()
 
-    inlineBtns.add(telebot.types.InlineKeyboardButton(text="Windows", url='http://microsoft.com'))
-    inlineBtns.add(telebot.types.InlineKeyboardButton(text="Linux", url='https://www.linuxfoundation.org/'))
-    Bot.send_message(message.from_user.id, "Choose your destiny: ", reply_markup=inlineBtns )
+    inline_btns.add(telebot.types.InlineKeyboardButton(text="Windows", url='http://microsoft.com'))
+    inline_btns.add(telebot.types.InlineKeyboardButton(text="Linux", url='https://www.linuxfoundation.org/'))
+    Bot.send_message(message.from_user.id, "Choose your destiny: ", reply_markup=inline_btns )
+
 
 @Bot.message_handler(commands=['kb'])
 def send_welcome(message):
@@ -32,31 +33,28 @@ def send_welcome(message):
 @Bot.message_handler(content_types=['text'])
 def handle_command(message):
     print(message.text)
-    #Echo(message)
-    SmartReply(message)
-
-def ShowKeyboard():
-    pass
+    # echo(message)
+    smart_reply(message)
 
 
-def RandomTyping(message):
+def random_typing(message):
     Bot.send_chat_action(message.from_user.id, "typing")
     time.sleep(random.randint(3, 6))
 
 
-def SmartReply(message):
+def smart_reply(message):
     if message.text == "button":
-        RandomTyping(message)
+        random_typing(message)
         Bot.send_message(message.from_user.id, "Button Accepted!")
 
     if message.text == "Bots are fun":
 
-        RandomTyping(message)
+        random_typing(message)
         Bot.send_message(message.from_user.id, "Indeed!")
 
-def Echo(message):
-    Bot.send_message(message.from_user.id, message.text)
 
+def echo(message):
+    Bot.send_message(message.from_user.id, message.text)
 
 
 Bot.polling(none_stop=True, interval=0)
