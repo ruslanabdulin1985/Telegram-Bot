@@ -50,7 +50,7 @@ python3 -m pip install pyTelegramBotApi
 
 
 ## Echo
-def Echo(message):
+def echo(message):
     Bot.send_message(message.from_user.id, message.text)
 
 ## Buttons
@@ -58,7 +58,7 @@ def Echo(message):
         Bot.send_message(message.from_user.id, "Button Accepted!")
 
 ## Interactions
-    def RandomTyping(message):
+    def random_typing(message):
         Bot.send_chat_action(message.from_user.id, "typing")
         time.sleep(random.randint(3, 6))
 
