@@ -48,11 +48,18 @@ Update pip install -U pip
 
 python3 -m pip install pyTelegramBotApi
 
+CODE
 
+## CREATE BOT
+```python
+import telebot
+Bot = telebot.TeleBot("TOKEN", parse_mode=None) # You can set parse_mode by default. HTML or MARKDOWN
+    
 ## Echo
+```python    
 def echo(message):
     Bot.send_message(message.from_user.id, message.text)
-
+```
 ## Buttons
     if message.text == "button":
         Bot.send_message(message.from_user.id, "Button Accepted!")
