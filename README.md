@@ -54,6 +54,7 @@ CODE
 ```python
 import telebot
 Bot = telebot.TeleBot("TOKEN", parse_mode=None) # You can set parse_mode by default. HTML or MARKDOWN
+```
     
 ## Echo
 ```python    
